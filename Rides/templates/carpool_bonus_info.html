@@ -1,0 +1,12 @@
+{% block title %}Carpool Bonus Information{% endblock %}
+
+{% block content %}
+<section class="bonus-info">
+    <div class="bonus-text">
+        <h2>Driving in your car soon?</h2>
+        <p>Drivers, great news: your good habits are being rewarded! Benefit from the Carpool Bonus by carpooling. See eligibility conditions.</p>
+        <a href="{% url 'create_ride' %}" class="offer-ride-btn">Offer a Ride</a>
+    </div>
+    <img src="{% static 'images/bonus-icon.png' %}" alt="Car Icon" class="highlight-image">
+</section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - GoTogether</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
+</head>
+<body>
+    <main>
+        <section class="profile-section">
+            <h1>User Profile</h1>
+            <div class="profile-info">
+                <h2>Welcome, {{ user.username }}!</h2>
+                <p><strong>First Name:</strong> {{ user.first_name }}</p>
+                <p><strong>Last Name:</strong> {{ user.last_name }}</p>
+                <p><strong>Email:</strong> {{ user.email }}</p>
+                <p><strong>Joined:</strong> {{ user.date_joined|date:"F j, Y" }}</p>
+                <!-- Add any other user information you want to display -->
+            </div>
+
+            <div class="profile-actions">
+                <!-- <a href="{% url 'edit_profile' %}" class="edit-profile-btn">Edit Profile</a> -->
+                <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

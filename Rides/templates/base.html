@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}GoTogether{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <a href="{% url 'home' %}" id="logo">GoTogether</a>
+        </div>
+        <div class="navbar-right">
+            <a href="{% url 'ride_list' %}" class="nav-link">
+                <i class="fas fa-search"></i>
+                <span class="nav-text">Find a Ride</span>
+            </a>
+            <a href="{% url 'create_ride' %}" class="nav-link">
+                <i class="fas fa-plus-circle"></i>
+                <span class="nav-text">Offer a Ride</span>
+            </a>
+            {% if user.is_authenticated %}
+                <div class="user-menu">
+                    <span id="user-icon"><i class="fas fa-user"></i></span>
+                    <div class="dropdown-content">
+                        <a href="{% url 'profile' user.id %}">Profile</a>
+                        <a href="{% url 'logout' %}">Logout</a>
+                    </div>
+                </div>
+            {% else %}
+                <a href="{% url 'login' %}" class="nav-link">
+                    <i class="fas fa-sign-in-alt"></i>
+                    <span class="nav-text">Login</span>
+                </a>
+                <a href="{% url 'register' %}" class="nav-link">
+                    <i class="fas fa-user-plus"></i>
+                    <span class="nav-text">Register</span>
+                </a>
+            {% endif %}
+        </div>
+    </header>
+
+    <!-- Horizontal image section -->
+    <section class="image-banner">
+        <img src="{% static 'images/banner.png' %}" alt="Banner Image">
+    </section>
+
+    <main>
+        {% block content %}
+        <!-- Main content goes here -->
+        {% endblock %}
+    </main>
+
+    <section class="help-centre">
+        <h1>Carpool Help Centre</h1>
+        <div class="help-content">
+            <div class="column">
+                <div class="row">
+                    <h3>How do I book a carpool ride?</h3>
+                    <p>You can book a carpool ride on our mobile app, or on GoTogether.com. Simply search for your destination, choose the date you want to travel and pick the carpool that suits you best! Some rides can be booked instantly, while other rides require manual approval from the driver. Either way, booking a carpool ride is fast, simple and easy.</p>
+                </div>
+                <hr>
+                <div class="row">
+                    <h3>How do I publish a carpool ride?</h3>
+                    <p>Offering a carpool ride on GoTogether is easy. To publish your ride, use our mobile app or GoTogether.com. Indicate your departure and arrival points, the date and time of your departure, how many passengers you can take and the price per seat. You’ll also need to choose how you want to accept bookings (either automatically or manually), and you have the option of adding any important details you think your passengers should know about. Then tap ‘Publish ride’ and you’re done!</p>
+                </div>
+                <hr>
+                <div class="row">
+                    <h3>How do I cancel my carpool ride?</h3>
+                    <p>If you have a change of plans, you can always cancel your carpool ride from the ‘Your rides’ section of our app. The sooner you cancel, the better. That way the driver has time to accept new passengers. The amount of your refund will depend on how far in advance you cancel. If you cancel more than 24 hours before departure, for example, you’ll receive a full refund, excluding the service fee.</p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="row">
+                    <h3>What are the benefits of travelling by carpool?</h3>
+                    <p>There are multiple advantages to carpooling, over other means of transport. Travelling by carpool is usually more affordable, especially for longer distances. Carpooling is also more eco-friendly, as sharing a car means there will be fewer cars on the road, and therefore fewer emissions. Taking a carpool ride is also a safe way to travel in the current times. Because there are only a few people in a car, you have fewer points of contact and there’s less risk than other travel options.</p>
+                </div>
+                <hr>
+                <div class="row">
+                    <h3>How much does a carpool ride cost?</h3>
+                    <p>The costs of a carpool ride can vary greatly, and depend on factors like distance, time of departure, the demand of that ride and more. It is also up to the driver to decide how much to charge per seat, so it’s hard to put an exact price tag on a ride. Check out some of our top carpool destinations to get an idea of price, or start searching for your next carpool ride on GoTogether.com.</p>
+                </div>
+                <hr>
+                <div class="row">
+                    <h3>How do I start carpooling?</h3>
+                    <p>Carpooling with GoTogether is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a GoTogether account, you can start booking or publishing rides directly on our app or website.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <h2>About GoTogether</h2>
+            <p>GoTogether is a leading carpooling platform dedicated to providing a safe, convenient, and cost-effective way for people to share rides. Our mission is to reduce the number of cars on the road, lower emissions, and make travel more affordable and enjoyable for everyone.</p>
+            <p>Whether you're a driver looking to share a ride or a passenger seeking a convenient travel option, GoTogether connects people with similar destinations, making carpooling easy and efficient. Our platform is user-friendly, and our team is committed to ensuring the best experience for all users.</p>
+            <p>Join our community today and start carpooling with GoTogether. Together, we can make a positive impact on the environment and enjoy a better way to travel.</p>
+        </div>
+    </section>
+
+    <section class="contact-info">
+        <div class="container">
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <p>Jaipur, Rajasthan</p>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <p><a href="mailto:support@gotogether.com">support@gotogether.com</a></p>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <p><a href="https://www.linkedin.com/company/gotogether" target="_blank">LinkedIn</a></p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 GoTogether(Charul Tongaria). All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home - GoTogether{% endblock %}
+
+{% block content %}
+
+
+<section class="home-content">
+    <form method="GET" action="{% url 'ride_list' %}" class="search-form">
+        <div class="home-search-group">
+            <input type="text" name="leaving_from" placeholder="Leaving From" required>
+            <input type="text" name="going_to" placeholder="Going To" required>
+            <input type="date" name="date_of_departure" required>
+            
+            <div class="passenger-input">
+                <input type="number" placeholder="Passengers" id="num_passengers" name="num_passengers" min="1" required>
+            </div>
+            
+            <div class="search-btn-container">
+                <button type="submit" class="search-btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </form>
+</section>
+
+<section class="info-section">
+    <div class="text-column">
+        <div class="icon">
+            <i class="fas fa-lock"></i> <!-- Example icon -->
+        </div>
+        <h3>Your pick of rides at low prices</h3>
+        <p>No matter where you’re going, by bus or carpool, find the perfect ride from our wide range of destinations and routes at low prices.</p>
+    </div>
+    <div class="text-column">
+        <div class="icon">
+            <i class="fas fa-user-shield"></i> <!-- Example icon -->
+        </div>
+        <h3>Trust who you travel with</h3>
+        <p>We take the time to get to know each of our members and bus partners. We check reviews, profiles and IDs, so you know who you’re travelling with and can book your ride at ease on our secure platform.</p>
+    </div>
+    <div class="text-column">
+        <div class="icon">
+            <i class="fas fa-mobile-alt"></i> <!-- Example icon -->
+        </div>
+        <h3>Scroll, click, tap and go!</h3>
+        <p>Booking a ride has never been easier! Thanks to our simple app powered by great technology, you can book a ride close to you in just minutes.</p>
+    </div>
+</section>
+
+<section class="info-highlight">
+    <img src="{% static 'images/ecurity_tips.png' %}" alt="Security Icon" class="highlight-image">
+    <div class="highlight-text">
+        <h2>Help us keep you safe from scams</h2>
+        <p>At GoTogether, we're working hard to make our platform as secure as it can be. But when scams do happen, we want you to know exactly how to avoid and report them. Follow our tips to help us keep you safe.</p>
+        <a href="{% url 'scam_info' %}" class="learn-more-btn">Learn More</a>
+    </div>
+</section>
+
+<section class="bonus-info">
+    <div class="bonus-text">
+        <h2>Driving in your car soon?</h2>
+        <p>Drivers, great news: your good habits are being rewarded! Benefit from the Carpool Bonus by carpooling. See eligibility conditions.</p>
+    </div>
+    <img src="{% static 'images/bonus-icon.png' %}" alt="Bonus Icon" class="bonus-image">
+    <a href="{% url 'create_ride' %}" class="offer-ride-btn">Offer a Ride</a>
+</section>
+
+{% endblock %}
+
+<script src="{% static 'js/script.js' %}"></script>

@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - GoTogether</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        .red { color: red; }
+        .green { color: green; }
+        .form-container { max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9; border-radius: 8px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+        .btn { display: block; width: 100%; padding: 10px; background-color: teal; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        .btn:hover { background-color: teal; }
+        .req-text { font-size: 12px; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form method="post" action="{% url 'register' %}" id="register-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="{{ form.username.id_for_label }}">Username</label>
+                {{ form.username }}
+                <p id="username-req" class="req-text red">Username must be at least 3 characters.</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.first_name.id_for_label }}">First Name</label>
+                {{ form.first_name }}
+                <p id="first-name-req" class="req-text red">First name is required.</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.last_name.id_for_label }}">Last Name</label>
+                {{ form.last_name }}
+                <p id="last-name-req" class="req-text red">Last name is required.</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+                <p id="email-req" class="req-text red">Email must be a valid email address.</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password1.id_for_label }}">Password</label>
+                {{ form.password1 }}
+                <p id="password1-req" class="req-text red">Password must be at least 8 characters and contain a number.</p>
+            </div>
+            <div class="form-group">
+                <label for="{{ form.password2.id_for_label }}">Confirm Password</label>
+                {{ form.password2 }}
+                <p id="password2-req" class="req-text red">Passwords must match.</p>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+
+    <script src="{% static 'js/register.js' %}"></script>
+</body>
+</html>

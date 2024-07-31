@@ -1,0 +1,946 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color:#f0f8ff;
+    color: #333;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: white; /* Changed background to white */
+    padding: 10px 20px;
+    align-items: center;
+}
+
+.navbar-left #logo {
+    color: teal; /* Changed text color to light blue */
+    font-size: 32px;
+    font-weight: italic;
+    text-transform: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-link {
+    color: teal; /* Changed text color to light blue */
+    margin: 0 20px; /* Increased gap between elements */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+}
+
+.nav-link i {
+    font-size: 20px; /* Size of the icon */
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.nav-link .nav-text {
+    font-size: 14px;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.user-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+#user-icon {
+    cursor: pointer;
+    font-size: 24px;
+    color: teal; /* Changed icon color to light blue */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white; /* Changed dropdown background to white */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    min-width: 150px;
+}
+
+.dropdown-content a {
+    color: black; /* Dropdown link text color */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.user-menu:hover .dropdown-content {
+    display: block;
+}
+
+footer {
+    background-color: gainsboro; /* Changed footer background to white */
+    color: teal; /* Changed footer text color to light blue */
+    padding: 10px 20px;
+    text-align: center; /* Center-aligns the text */
+}
+
+footer .container {
+    display: flex;
+    justify-content: center; /* Center-aligns elements within container */
+    align-items: center; /* Vertical center-aligns elements */
+    height: 100%; /* Ensures full height for alignment */
+}
+
+.image-banner {
+    width: 100%;
+    height: 250px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.image-banner img {
+    width: 100%;
+    height: auto;
+}
+
+/* Styles for Home Page */
+.home-content {
+    padding: 20px;
+    text-align: center;
+    margin: 20px auto;
+    position: relative;
+    z-index: 1;
+}
+
+.home-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: teal; /* Primary color */
+}
+
+.home-search-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Space between elements */
+    margin-top: 20px;
+}
+
+.home-search-group input[type="text"],
+.home-search-group input[type="date"],
+.passenger-input input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s;
+    width: calc(25% - 30px); /* Adjusted width for the extra field */
+}
+
+.home-search-group input[type="text"]:focus,
+.home-search-group input[type="date"]:focus,
+.passenger-input input[type="number"]:focus {
+    border-color: teal; /* Focus color */
+}
+
+.home-search-group button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: teal; /* Button color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.home-search-group button i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+.home-search-group button:hover {
+    background-color:teal; /* Darker shade on hover */
+}
+
+.passenger-input {
+    display: flex;
+    align-items: center;
+}
+
+.passenger-input button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.passenger-input button:hover {
+    background-color: teal;
+}
+
+.passenger-input input[type="number"] {
+    width: 60px; /* Width of the number input */
+    text-align: center;
+}
+
+/* Styles for Banner and Overlapping Form */
+.banner {
+    position: relative;
+    height: 300px; /* Set desired banner height */
+    overflow: hidden;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.home-content {
+    position: relative;
+    top: -100px; /* Adjust to overlap the banner */
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    margin-top: -5px;
+    background: rgba(255, 255, 255, 0.5); /* Increased transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Extended width for a more prominent appearance */
+    margin-bottom: -80px;
+}
+
+.home-search-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-search-group input, .home-search-group button {
+    padding: 15px; /* Increased padding for larger input fields */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    flex: 1 1 calc(25% - 10px); /* Each input takes up 25% minus the gap */
+    box-sizing: border-box;
+}
+
+.passenger-input {
+    display: flex;
+    align-items: center;
+    flex: 1 1 calc(25% - 10px);
+    box-sizing: border-box;
+}
+
+.passenger-input button {
+    background-color: teal;
+    color: white;
+    border: none;
+    padding: 10px; /* Increased padding */
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.passenger-input input {
+    width: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 0 5px;
+    padding: 10px; /* Increased padding */
+}
+
+.passenger-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.passenger-btn:focus {
+    outline: none;
+}
+
+input[type="number"] {
+    width: 60px; /* Adjust the width of the input as needed */
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Existing styles... */
+
+/* New text section styles */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0; /* Reduced margin to decrease the gap above and below */
+    padding: 20px;
+    background-color: white; /* Background color for the section */
+}
+
+.text-column {
+    flex: 1;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-column h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black; /* Text color */
+    margin-bottom: 10px;
+    text-align: center; /* Center-align heading */
+}
+
+.text-column p {
+    color: black; /* Text color */
+    font-size: 16px;
+    text-align: center; /* Center-align text */
+}
+
+.icon {
+    font-size: 24px;
+    color: teal; /* Icon color */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+/* Styles for the text section */
+.info-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f0f8ff; /* Sky blue background */
+    gap: 10px;
+}
+
+.text-column {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.text-column h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.text-column p {
+    color: black;
+    font-size: 16px;
+}
+
+/* Styles for the highlight section */
+.info-highlight {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 20px;
+    background-color: #f0f8ff; /* Sky blue background */
+    margin: 20px 0; /* Reduced gap above and below */
+    position: relative;
+}
+
+.highlight-image {
+    width: 450px; /* Adjust size as needed */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.highlight-text {
+    flex: 1;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.highlight-text h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+    a
+}
+
+.highlight-text p {
+    color: black;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: teal;
+    background-color: white;
+    border: 2px solid teal;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.learn-more-btn:hover {
+    background-color: teal;
+    color: white;
+}
+
+.security-tips {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f0f8ff; /* Light Sky Blue background */
+    border-radius: 8px;
+}
+
+.security-tip {
+    flex: 1;
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.security-tip h3 {
+    margin-top: 0;
+}
+
+.security-tip ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.info-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #87ceeb; /* Sky Blue background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.info-banner img {
+    width: 200px; /* Adjust as needed */
+    height: auto;
+    margin-right: 20px;
+}
+
+.info-banner p {
+    flex: 1;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    background-color: teal;
+    color: white; /* Sky Blue */
+    padding: 10px 20px;
+    border: 2px solid #87ceeb; /* Sky Blue */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.learn-more-btn:hover {
+    background-color: #87ceeb; /* Sky Blue */
+    color: white;
+}
+
+.scam-info {
+    padding: 20px;
+}
+
+.security-tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.security-tip {
+    flex: 1 1 300px; /* Adjust the base width as needed */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #f9f9f9;
+}
+
+.security-tip h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.security-tip ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.security-tip p {
+    margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .security-tips {
+        flex-direction: column;
+    }
+}
+
+.info-highlight, .bonus-info {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center-align the content */
+    padding: 20px;
+    background-color: #f0f9ff; /* Light sky blue background */
+    margin-bottom: 20px; /* Space between sections */
+}
+
+.highlight-image, .bonus-image {
+    max-width: 450px; /* Adjust the size */
+    height: auto;
+    margin-right: 20px; /* Space between image and text */
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+
+.highlight-text, .bonus-text {
+    flex: 1;
+    text-align: center; /* Center-align text */
+}
+
+.learn-more-btn, .bonus-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff; /* White background */
+    color: teal; /* Sky blue text color */
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid teal; /* Sky blue border */
+    margin-top: 10px; /* Space above button */
+}
+
+.learn-more-btn:hover, .bonus-btn:hover {
+    background-color: teal; /* Sky blue background on hover */
+    color: #ffffff; /* White text color on hover */
+}
+
+/* Bonus Info Section */
+.bonus-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center text alignment */
+    padding: 20px;
+}
+
+.bonus-text {
+    margin-bottom: 20px; /* Space between text and button */
+}
+
+.bonus-image {
+    margin-top: 20px; /* Space between text and image */
+}
+
+.bonus-info .highlight-image {
+    width: 300px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Offer a Ride Button */
+.offer-ride-btn {
+    display: inline-block;
+    background-color: white;
+    color: teal; /* Sky blue color */
+    border: 2px solid teal;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.offer-ride-btn:hover {
+    background-color: teal;
+    color: white;
+}
+
+/* Help Centre Section */
+.help-centre {
+    text-align: center;
+    padding: 40px 60px; /* Increased left and right padding for more space */
+}
+
+.help-centre h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.help-content {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+}
+
+.column {
+    width: 45%;
+    text-align: left; /* Align text to the left within columns */
+    margin: 0 auto; /* Center column within the container */
+}
+
+.row {
+    margin-bottom: 20px;
+}
+
+.row h3 {
+    font-size: 1.4em; /* Decreased font size of headings */
+    margin-bottom: 10px;
+}
+
+.row p {
+    font-size: 0.9em; /* Decreased font size of paragraphs */
+    line-height: 1.6;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* About Section */
+.about-section {
+    background-color: white; /* Light gray background */
+    padding: 40px 20px; /* Padding for top and bottom, adjust as needed */
+    text-align: center; /* Center align text */
+    border-bottom: 1px solid #ddd; /* Optional bottom border */
+}
+
+.about-section h2 {
+    font-size: 2em; /* Adjust size as needed */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.about-section p {
+    font-size: 1em; /* Adjust size as needed */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Space between paragraphs */
+}
+
+.container {
+    max-width: 1200px; /* Adjust as needed */
+    margin: 0 auto;
+    padding: 0 15px; /* Padding for responsiveness */
+}
+
+/* Contact Info Section */
+.contact-info {
+    background-color: #fff; /* White background */
+    padding: 20px 0; /* Padding for top and bottom */
+    text-align: center; /* Center align text */
+}
+
+.contact-info .contact-item {
+    display: inline-block; /* Display items in a row */
+    margin: 0 20px; /* Space between items */
+    vertical-align: middle; /* Align items vertically in the middle */
+}
+
+.contact-info .contact-item i {
+    font-size: 2em; /* Icon size */
+    color: teal; /* Icon color, adjust as needed */
+    display: block; /* Make icon block-level */
+    margin-bottom: 10px; /* Space between icon and text */
+}
+
+.contact-info .contact-item p {
+    font-size: 1em; /* Text size */
+    margin: 0; /* Remove default margin */
+}
+
+.contact-info .contact-item a {
+    color: black; /* Link color, adjust as needed */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.contact-info .contact-item a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: teal;
+}
+
+.field-requirement {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: red; /* Initially red */
+}
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: teal;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background-color: teal;
+}
+
+.form-container p {
+    text-align: center;
+}
+
+/* Basic styling for profile page */
+.profile-section {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-info {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info h2 {
+    margin-top: 0;
+}
+
+.profile-actions {
+    margin-top: 20px;
+}
+
+.edit-profile-btn, .logout-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.edit-profile-btn {
+    background-color: teal; /* Blue button */
+}
+
+.logout-btn {
+    background-color: #dc3545; /* Red button */
+}
+
+.edit-profile-btn:hover, .logout-btn:hover {
+    opacity: 0.8;
+}
+
+.profile-edit-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.profile-edit-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    color: #d9534f; /* Red color for error messages */
+    font-size: 0.875em; /* Slightly smaller font size */
+    margin-top: 0.5em; /* Space above the error message */
+}
+
+/* ride_list.css */
+
+.ride-list-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.ride-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ride-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ride-info {
+    flex: 1;
+}
+
+.ride-actions {
+    margin-left: 20px;
+}
+
+.ride-item h3 {
+    margin-top: 0;
+}
+
+.ride-item p {
+    margin: 5px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    color: #fff;
+    background-color: teal;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.btn-primary:hover {
+    background-color: teal;
+}
+
+.btn-delete {
+    background-color: #d9534f; /* Red color for delete button */
+}
+
+.dropdown-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+input[type="text"] {
+    width: calc(100% - 120px); /* Adjust based on dropdown width */
+}
+
+.dropdown {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 34px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
