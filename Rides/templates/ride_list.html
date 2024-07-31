@@ -11,7 +11,7 @@
                     <h3>{{ ride.leaving_from }} to {{ ride.going_to }}</h3>
                     <p>Date: {{ ride.date_of_departure }}</p>
                     <p>Number of Passengers: {{ ride.num_passengers }}</p>
-                    <p>Driver: {{ ride.driver.username }}</p>
+                    <p>Voyager: {{ ride.driver.username }}</p>
                 </div>
                 <div class="ride-actions">
                     <a href="{% url 'profile' ride.driver.id %}" class="btn btn-primary">View Driver Profile</a>
