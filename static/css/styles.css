@@ -924,3 +924,100 @@ hr {
 .btn-delete {
     background-color: #d9534f; /* Red color for delete button */
 }
+
+/* General responsive adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left #logo {
+        font-size: 24px;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+        align-items: flex-start;
+    }
+
+    .nav-link {
+        margin: 10px 0;
+        font-size: 14px;
+    }
+
+    .home-search-group input[type="text"],
+    .home-search-group input[type="date"],
+    .passenger-input input[type="number"],
+    .home-search-group button {
+        width: 100%; /* Full width on small screens */
+    }
+
+    .passenger-input {
+        flex-direction: column;
+    }
+
+    .passenger-input button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .search-form {
+        width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+
+    .info-section {
+        flex-direction: column;
+    }
+
+    .text-column {
+        margin: 10px 0;
+    }
+
+    .profile-container {
+        padding: 15px;
+    }
+
+    .profile-form input[type="text"],
+    .profile-form input[type="email"],
+    .profile-form input[type="password"] {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-left #logo {
+        font-size: 20px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .home-search-group input[type="text"],
+    .home-search-group input[type="date"],
+    .passenger-input input[type="number"] {
+        font-size: 14px;
+    }
+
+    .home-search-group button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .passenger-input button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .profile-container {
+        padding: 10px;
+    }
+
+    .profile-form input[type="submit"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
