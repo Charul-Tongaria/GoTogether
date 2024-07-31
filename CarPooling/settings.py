@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-62u!tjn_4-u^v5(o=6hipyx#7yq&&(hwcpn!mqi27h4tdkr_*9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
 
 
 # Application definition
@@ -130,3 +130,6 @@ AUTH_USER_MODEL = 'Rides.CustomUser'
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/home/'
+
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
