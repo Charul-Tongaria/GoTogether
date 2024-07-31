@@ -138,7 +138,9 @@ def ride_list(request):
         rides = rides.filter(date_of_departure=date_of_departure)
     if num_passengers:
         rides = rides.filter(num_passengers__gte=int(num_passengers))
-
+    context = {
+        'rides': Ride.objects.all(),
+    }
     return render(request, 'ride_list.html', {'rides': rides})
 
 @login_required

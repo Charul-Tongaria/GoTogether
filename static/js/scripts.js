@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cities = [
-        "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Jaipur", "Ahmedabad", "Surat",
-        "Kanpur", "Nagpur", "Indore", "Bhopal", "Visakhapatnam", "Vadodara", "Coimbatore", "Mysore", "Chandigarh", "Guwahati"
-    ];
     const populateDropdowns = () => {
         const leavingDropdown = document.getElementById('leaving_from_dropdown');
         const goingDropdown = document.getElementById('going_to_dropdown');

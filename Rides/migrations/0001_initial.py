@@ -22,7 +22,7 @@ class Migration(migrations.Migration):
                 ('going_to', models.CharField(max_length=100)),
                 ('date_of_departure', models.DateField()),
                 ('num_passengers', models.PositiveIntegerField()),
-                ('driver', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('driver', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, null=True)),
             ],
         ),
     ]

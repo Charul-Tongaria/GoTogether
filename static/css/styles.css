@@ -924,23 +924,3 @@ hr {
 .btn-delete {
     background-color: #d9534f; /* Red color for delete button */
 }
-
-.dropdown-container {
-    position: relative;
-    margin-bottom: 15px;
-}
-
-input[type="text"] {
-    width: calc(100% - 120px); /* Adjust based on dropdown width */
-}
-
-.dropdown {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 120px;
-    height: 34px;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    cursor: pointer;
-}
